@@ -13,6 +13,7 @@ var exec = require('./routes/exec');
 var cheerio = require('./routes/cheerio');
 var mongo = require('./routes/mongo');
 var eventproxy = require('./routes/eventproxy');
+const mail = require('./routes/mail');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/exec',exec);
 app.use('/cheerio',cheerio);
 app.use('/mongodb',mongo);
 app.use('/eventproxy',eventproxy);
+app.use('/mail', mail);
 app.use('/test', function(res,req){
     req.send({status:1,msg:'测试'});
 });
